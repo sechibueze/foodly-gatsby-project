@@ -1,24 +1,23 @@
-import { Link } from "gatsby"
 import React from "react"
-import "./navbar.module.css"
+import { Link } from "gatsby"
+import * as navbarStyles from "./navbar.module.css"
+console.log("navbarStyles", navbarStyles)
 const Navbar = () => (
-  <nav className="navbar">
-    <div className="logo-wrapper">LOGO</div>
-    <ul className="navlink-wrapper">
-      <li>
-        {" "}
-        <Link to="/">Home</Link>{" "}
-      </li>
-      <li>
-        {" "}
-        <Link to="/">Browse</Link>{" "}
-      </li>
-      <li>
-        {" "}
-        <Link to="/"> Plans </Link>{" "}
-      </li>
-    </ul>
-    <div className="menu-icon">MENU</div>
+  <nav className={navbarStyles.navbar}>
+    <Link to="/" className="logo-wrapper">
+      LOGO
+    </Link>
+    <div className={navbarStyles.navigation}>
+      <ul className={navbarStyles.navlinkWrapper}>
+        <li className={navbarStyles.navlink}>
+          <Link to="/about">About</Link>{" "}
+        </li>
+        <li className={navbarStyles.navlink}>
+          <Link to="/blog"> Blog </Link>{" "}
+        </li>
+      </ul>
+      <div className={navbarStyles.hamburger}>MENU</div>
+    </div>
   </nav>
 )
 

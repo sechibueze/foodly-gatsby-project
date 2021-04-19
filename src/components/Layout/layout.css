@@ -10,6 +10,7 @@ html {
   font-size: 16px;
 }
 /* Craete a sticky footer */
+/* Wrap the .content-container and the .layout-footer-wrapper */
 .layout-wrapper {
   display: flex;
   flex-direction: column;
@@ -17,12 +18,24 @@ html {
   align-items: flex-start;
   min-height: 100vh;
 }
+/* Wrapper for the Navbar and Page 
+contents .content-container */
 .content-container {
+  width: 100%;
   flex-grow: 1;
 }
+
+.body-container {
+  width: 80%;
+  margin: auto;
+  padding: 0rem 1rem;
+  background-color: lavenderblush;
+}
+
 .layout-footer-wrapper {
-  background-color: #999;
+  background-color: lavenderblush;
   width: 100%;
   display: block;
   padding: 1rem;
+  border-top: 1px solid rgb(17, 24, 46);
 }
