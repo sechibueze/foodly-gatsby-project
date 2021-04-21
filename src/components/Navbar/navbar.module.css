@@ -5,10 +5,37 @@
   align-items: center;
   width: 100%;
   padding: 0.75rem 1rem;
-  background-color: tomato;
-  color: white;
+  background-color: lavenderblush;
+  color: tomato;
+  border-bottom: 1px solid rgb(17, 24, 46);
 }
 
-.navlink-wrapper {
+.navigation {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 0.75rem;
+}
+.navlinkWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+.navlink {
+  padding: 0rem 0.75rem;
+  margin: auto 0.25rem;
+}
+.active {
+  color: orangered;
+  font-weight: bold;
+}
+.navlink:hover {
+  border-bottom: 1px solid tomato;
+}
+/* Hide the Hamburger menu for the mean time */
+.hamburger {
   display: none;
+  user-select: none;
 }
