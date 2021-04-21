@@ -6,10 +6,8 @@ published: false
 ---
 
 We are excited to launch the T4G initiaive or Teachers's professional development
-We are excited to launch the T4G initiaive or Teachers's professional development
-We are excited to launch the T4G initiaive or Teachers's professional development
 
-## Problems of Education
+### Code as a Service
 
 - Poor Infrastructure
 - Poor Teachers's pc

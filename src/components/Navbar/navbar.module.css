@@ -27,6 +27,10 @@
   padding: 0rem 0.75rem;
   margin: auto 0.25rem;
 }
+.active {
+  color: orangered;
+  font-weight: bold;
+}
 .navlink:hover {
   border-bottom: 1px solid tomato;
 }

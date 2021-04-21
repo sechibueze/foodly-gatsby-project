@@ -9,10 +9,15 @@ const Navbar = () => (
     <div className={navbarStyles.navigation}>
       <ul className={navbarStyles.navlinkWrapper}>
         <li className={navbarStyles.navlink}>
-          <Link to="/about">About</Link>{" "}
+          <Link to="/about" activeClassName={navbarStyles.active}>
+            About
+          </Link>{" "}
         </li>
         <li className={navbarStyles.navlink}>
-          <Link to="/blog"> Blog </Link>{" "}
+          <Link to="/blog" activeClassName={navbarStyles.active}>
+            {" "}
+            Blog{" "}
+          </Link>{" "}
         </li>
       </ul>
       <div className={navbarStyles.hamburger}>MENU</div>
