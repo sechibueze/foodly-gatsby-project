@@ -5,30 +5,36 @@ import Layout from "../components/Layout"
 import "../styles/pages/blog.scss"
 
 const Blog = ({ data }) => {
-  console.log("efrgrg", data)
   return (
     <Layout>
       <h1>Recent Blog Posts</h1>
       <div className="post-items-layout">
-        {data.allMarkdownRemark.edges.map(({ node }) => {
+        {data.allContentfulPost.edges.map(({ node }) => {
           const {
             id,
-            timeToRead,
-            frontmatter: { title, author, date, published },
-
-            fields: { pageSlug },
+            title,
+            excerpt,
+            isPublished,
+            publishedDate,
+            postImage: {
+              fluid: { src },
+            },
+            creator: { name },
           } = node
           return (
-            <Link key={id} to={`/blog/${pageSlug}`} className="post-card">
+            <Link key={id} to={`/blog/${id}`} className="post-card">
+              <img
+                src={src}
+                alt={title}
+                style={{ width: "60px", height: "60px" }}
+              />
               <h3 className="post-title"> {title} </h3>
+              <p>{excerpt} </p>
               <div className="post-info">
-                <span> {author} </span>
-                <span> {date} </span>
-                <span>
-                  {" "}
-                  {timeToRead} {`${timeToRead < 2 ? "min read" : "mins read"}`}{" "}
-                </span>
-                <span> {published ? ":)" : ":("} </span>
+                <span> {name} </span>
+                <span> {publishedDate} </span>
+
+                <span> {isPublished ? ":)" : ":("} </span>
               </div>
             </Link>
           )
@@ -40,22 +46,25 @@ const Blog = ({ data }) => {
 
 export default Blog
 
-export const GET_POSTS_QUERY = graphql`
-  query posts {
-    allMarkdownRemark {
+export const GET_POST_ITEMS_QUERY = graphql`
+  query MyQuery {
+    allContentfulPost {
       edges {
         node {
-          fields {
-            pageSlug
-          }
-          frontmatter {
-            title
-            author
-            date
-            published
-          }
-          timeToRead
           id
+          isPublished
+          excerpt
+          slug
+          title
+          publishedDate(formatString: "MMMM Do, YYYY")
+          postImage {
+            fluid {
+              src
+            }
+          }
+          creator {
+            name
+          }
         }
       }
     }
